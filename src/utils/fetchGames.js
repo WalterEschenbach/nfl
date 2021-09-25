@@ -1,5 +1,4 @@
 import axios from 'axios'
-import keys from '../config/keys'
 import redditIds from './redditIds'
 
 const fetchGames = () => {
@@ -7,7 +6,7 @@ const fetchGames = () => {
         method: "GET",
         url: "https://odds.p.rapidapi.com/v1/odds?sport=americanfootball_nfl&region=us&mkt=totals",
         headers: {
-            'x-rapidapi-key': process.env.NFL_API_KEY || keys.NFL_API_KEY,
+            'x-rapidapi-key': process.env.NFL_API_KEY,
             'x-rapidapi-host': 'odds.p.rapidapi.com'
         }
 
