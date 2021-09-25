@@ -1,10 +1,11 @@
 import axios from 'axios'
 
 const getNews = async (team1slug, team2slug) => {
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 
     const team1 = await axios({
         method: "GET",
-        url: `https://newsapi.org/v2/everything?qInTitle=${team1slug}&sortBy=publishedAt&language=en`,
+        url: `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${team1slug}&sortBy=publishedAt&language=en`,
         headers: {
             "x-api-key": process.env.REACT_APP_NEWS_API_KEY
         }
@@ -13,7 +14,7 @@ const getNews = async (team1slug, team2slug) => {
     })
     const team2 = await axios({
         method: "GET",
-        url: `https://newsapi.org/v2/everything?qInTitle=${team2slug}&sortBy=publishedAt&language=en`,
+        url: `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${team2slug}&sortBy=publishedAt&language=en`,
         headers: {
             "x-api-key": process.env.REACT_APP_NEWS_API_KEY
         }
