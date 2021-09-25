@@ -1,0 +1,25 @@
+.article-item-container{
+    border-bottom: 1px solid grey;
+    height: 7rem;
+    overflow-y:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.article-img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    margin-left: 3px;
+    flex-basis: 1;
+}
+.item-link{
+    text-decoration: none;
+    color: black;
+}
+.title-text{
+    flex-basis: 5;
+    width: 75%;
+    margin-right: 5px;
+}
