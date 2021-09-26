@@ -11,7 +11,7 @@ const getProjection = async (team1slug, team2slug) => {
 
     })
         .then((res) => {
-            console.log('res:', res)
+            console.log('projectionRes1:', res)
         })
         .catch(error => {
             console.log(error)
@@ -20,7 +20,7 @@ const getProjection = async (team1slug, team2slug) => {
         method: "GET",
         url: `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/${team2Id}/projection`,
 
-    }).catch(error => {
+    }).then((res) => { console.log('projectionRes2:', res) }).catch(error => {
         console.log(error)
     })
 

@@ -9,7 +9,7 @@ const getNews = async (team1slug, team2slug) => {
 
     })
         .then((res) => {
-            console.log('res:', res)
+            console.log('newsRes1:', res)
         })
         .catch(error => {
             console.log(error)
@@ -18,7 +18,7 @@ const getNews = async (team1slug, team2slug) => {
         method: "GET",
         url: `https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=50&page=1`,
 
-    }).catch(error => {
+    }).then((res) => { console.log('newsRes2:', res) }).catch(error => {
         console.log(error)
     })
 
