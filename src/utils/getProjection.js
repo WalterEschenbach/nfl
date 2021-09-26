@@ -1,27 +1,32 @@
+import { useState } from 'react'
 import axios from 'axios'
 import redditIds from './redditIds'
 
 const getProjection = async (team1slug, team2slug) => {
     const team1Id = redditIds[team1slug]
     const team2Id = redditIds[team2slug]
+    const [team1, setTeam1] = useState(null)
+    const [team2, setTeam2] = useState(null)
 
-    const team1 = await axios({
+    await axios({
         method: "GET",
         url: `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/${team1Id}/projection`,
 
     })
         .then((res) => {
             console.log('projectionRes1:', res)
+            setTeam1(res.data)
         })
         .catch(error => {
             console.log(error)
         })
-    const team2 = await axios({
+    await axios({
         method: "GET",
         url: `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/${team2Id}/projection`,
 
     }).then((res) => { console.log('projectionRes2:', res) }).catch(error => {
         console.log(error)
+        setTeam2(res.data)
     })
 
     const teams = [team1, team2]
