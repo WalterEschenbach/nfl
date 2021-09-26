@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 //import getRedditRSS from '../../utils/getRedditRSS'
 import getNews from '../../utils/getNews'
-import getProjection from '../../utils/getProjection'
-import ArticleItem from '../articleitem/ArticleItem'
+import GetProjection from '../../utils/getProjection'
+//import ArticleItem from '../articleitem/ArticleItem'
 
 
 const Game = () => {
@@ -17,7 +17,7 @@ const Game = () => {
     useEffect(() => {
         async function getData() {
             const news = await getNews(team1, team2)
-            const projection = await getProjection(team1, team2)
+            const projection = await GetProjection(team1, team2)
             setTeamNews(news)
             setTeamProjection(projection)
         }
