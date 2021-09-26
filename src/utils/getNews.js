@@ -1,23 +1,23 @@
 import axios from 'axios'
 
 const getNews = async (team1slug, team2slug) => {
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+    //const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 
     const team1 = await axios({
         method: "GET",
-        url: `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${team1slug}&sortBy=publishedAt&language=en`,
-        headers: {
-            "x-api-key": process.env.REACT_APP_NEWS_API_KEY
-        }
-    }).catch(error => {
-        console.log(error)
+        url: `https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=50&page=1`,
+
     })
+        .then((res) => {
+            console.log('res:', res)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     const team2 = await axios({
         method: "GET",
-        url: `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${team2slug}&sortBy=publishedAt&language=en`,
-        headers: {
-            "x-api-key": process.env.REACT_APP_NEWS_API_KEY
-        }
+        url: `https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=50&page=1`,
+
     }).catch(error => {
         console.log(error)
     })

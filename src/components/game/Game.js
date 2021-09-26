@@ -26,7 +26,7 @@ const Game = () => {
     console.log('id:', id)
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ height: "50vh", display: 'flex' }}>
+            {/* <div style={{ height: "50vh", display: 'flex' }}>
                 <div style={{ width: "4rem", height: "100%", textAlign: "center" }}> <h1 style={{ writingMode: " vertical-rl", textOrientation: "upright" }}>{team1.split(" ").pop()}</h1></div>
                 <div style={{ overflowY: "scroll" }}>
                     {teamRSS && teamRSS[0]?.data.articles.map(article => {
@@ -41,7 +41,7 @@ const Game = () => {
                         return <ArticleItem key={article.content} title={article.title} url={article.url} img_url={article.urlToImage} />
                     })}
                 </div>
-            </div>
+            </div> */}
 
         </div>
     )
