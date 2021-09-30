@@ -1,20 +1,29 @@
 .gameItemContainer{
     display: flex;
-    border: 1px solid blue;
-    height: 7rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 .team1{
-    width: 25%;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
 }
 .summary{
-    width: 50%;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
 }
-.summary ul li{
-    list-style: none;
-}
+
 .team2{
-    width: 25%;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
 }

@@ -3,6 +3,8 @@ import GameItem from '../gameitem/GameItem'
 import fetchGames from '../../utils/fetchGames'
 import './gameList.css'
 import { Link, useParams } from 'react-router-dom'
+import { Container, Grid } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const GameList = () => {
     const [games, setGames] = useState(null)
@@ -19,17 +21,28 @@ const GameList = () => {
     }, [])
 
     let { id } = useParams()
+    let screenSize = useMediaQuery('(max-width:500px)')
 
     return (
-        <div>
-            {games && games.map((game) => {
-                return (
-                    <Link key={game.id} to={`/game/team1=${game.teams[0]}&team2=${game.teams[1]}`}>
-                        <GameItem data={game} id={id} />
-                    </Link>
-                )
-            })}
-        </div>
+        <Container disableGutters={screenSize} >
+            <Grid container
+                justify="center"
+                rowSpacing={{ xs: 0, md: 1 }}
+                columnSpacing={{ xs: 0, md: 0 }}
+                style={{ justifyContent: "center" }}>
+                {games && games.map((game) => {
+                    return (
+                        <Grid item sm={12} md={4} className="gameListContainer" key={game.id}>
+                            <Link
+                                to={`/game/team1=${game.teams[0]}&team2=${game.teams[1]}`}
+                                className="gameListLink">
+                                <GameItem data={game} id={id} />
+                            </Link>
+                        </Grid>
+                    )
+                })}
+            </Grid>
+        </Container>
 
     )
 }

@@ -26,7 +26,7 @@ module.exports = {
     "Jacksonville Jaguars": "30",
     "Tampa Bay Buccaneers": "27",
     "Tennessee Titans": "10",
-    "Cincinatti Bengals": "4",
+    "Cincinnati Bengals": "4",
     "Cleveland Browns": "5",
     "Indianapolis Colts": "11",
     "San Francisco 49ers": "25",

@@ -1,20 +1,22 @@
 import React from 'react'
 import './gameItem.css'
+import { Card, Grid } from '@mui/material'
 
 const GameItem = ({ data }) => {
     const currentDate = new Date(data.commence_time * 1000)
 
     return (
-        <div className="gameItemContainer">
-            <div className="team1">{data.teams[0]}</div>
-            <div className="summary">
-                <ul>
-                    <li></li>
-                    <li>{currentDate.toLocaleString()}</li>
-                </ul>
-            </div>
-            <div className="team2">{data.teams[1]}</div>
-        </div>
+        <Card style={{ height: "95%" }}>
+            <Grid container className="gameItemContainer">
+                <Grid item className="team1" xs={3}>{data.teams[0]} </Grid>
+                <Grid item xs={6} className="summary">
+                    {currentDate.toLocaleString()}
+                </Grid>
+                <Grid item className="team2" xs={3}>{data.teams[1]}</Grid>
+            </Grid>
+        </Card>
+
+
     )
 }
 
